@@ -19,7 +19,29 @@ public class FrogSimulation {
 
     public boolean simulate(){
         boolean result = false;
-
+        int position = 0;
+        for(int count = 0; count < maxHops; count++){
+            position += hopDistance();
+            if(position >= goalHops){
+                result = true;
+                return result;
+            }
+            if (position < 0){
+                result = false;
+                return result;
+            }
+        }
         return result;
     }
+
+    public double runSimulation(int num){
+        int count = 0;
+        for(int i = 0; i < num; i++){
+            if(simulate()){
+                count++;
+            }
+        }
+        return count;
+    }
+    
 }
