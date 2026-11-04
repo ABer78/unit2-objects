@@ -1,4 +1,4 @@
-package Server;
+
 
 import java.util.*;
 import java.io.*;
@@ -26,7 +26,7 @@ public class SimpleClient {
         out.close();
         in.close();
     }
-    public void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {
         SimpleClient simpleClient = new SimpleClient("127.0.0.1", 9090);
         Scanner input = new Scanner(System.in);
         while(true){
